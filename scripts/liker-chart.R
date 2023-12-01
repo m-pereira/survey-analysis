@@ -47,3 +47,18 @@ p <- plot(raw_plot,
   theme(axis.text.y = element_text(colour = "black"), 
   axis.text.x = element_text(colour = "black"))
 print(p)
+
+p <- plot(raw_plot,type = "heat", 
+          centered = FALSE, include.histogram = FALSE) + 
+  ggtitle("Como você avalia a satisfação no trabalho") + 
+  theme(axis.text.y = element_text(colour = "black"), 
+        axis.text.x = element_text(colour = "black"))
+p
+
+
+turno <- 
+  c(rep("diurno",raw_data %>% nrow()/2-0.5), 
+    rep("noturno",raw_data %>% nrow()/2+0.5))
+
+grouped_raw_plot <- likert(raw_data[,1:3],grouping = turno)
+plot(grouped_raw_plot)
