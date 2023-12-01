@@ -14,7 +14,6 @@ rawdata %>%
 
 library(tidyverse) 
 library(ggbeeswarm) # to make jitter plots 
-
 library(emmeans) # for estimated marginal means and stats 
 
 library(RColorBrewer) # for colors 
